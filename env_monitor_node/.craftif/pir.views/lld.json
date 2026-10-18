@@ -1,0 +1,15 @@
+{
+  "schema_version": "3.0.0",
+  "view": "lld",
+  "revision": "cd0fd4c0ee16de05c8b4b0b7b02c154f",
+  "graph_version": 3,
+  "generated_at_ms": 1792326548313,
+  "mermaid": "flowchart TD\n  boot[\"Enter application<br/>main/entry.c:4\"]\n  start[\"Call app_start<br/>main/entry.c:6\"]\n  emit[\"Emit firmware started log<br/>firmware/app/app.c:9\"]\n  boot -->  start\n  start -->  emit",
+  "title": "Low-Level Design (Firmware Workflow)",
+  "node_notes": {
+    "emit": "This step records that firmware has started; it is the only runtime action shown by the application source. firmware/app/app.c emits the ESP_LOGI message at line 9.",
+    "start": "This step transfers control to the vendor-agnostic application startup function. main/entry.c calls app_start at line 6.",
+    "boot": "This step enters the ESP-IDF application hook. main/entry.c defines app_main at line 4."
+  },
+  "authored_by_model": true
+}

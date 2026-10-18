@@ -1,0 +1,15 @@
+{
+  "schema_version": "3.0.0",
+  "view": "hld",
+  "revision": "cd0fd4c0ee16de05c8b4b0b7b02c154f",
+  "graph_version": 3,
+  "generated_at_ms": 1792326548313,
+  "mermaid": "flowchart TD\n  subgraph Runtime[\"Startup runtime\"]\n    entry[\"ESP-IDF entry shim<br/>main/entry.c:4-6\"]\n    app[\"Application startup<br/>firmware/app/app.c:7-9\"]\n    log[\"ESP-IDF log output<br/>ESP_LOGI via logger.h\"]\n  end\n  entry -->|calls app_start| app\n  app -->|ESP_LOGI startup message| log",
+  "title": "High-Level Design",
+  "node_notes": {
+    "app": "This application module performs the startup action and emits the firmware-started message. firmware/app/app.c implements app_start and uses ESP_LOGI through logger.h.",
+    "log": "This is the destination for the application's ESP-IDF startup log call. The application includes logger.h, which re-exports esp_log.h, and calls ESP_LOGI with the firmware-started message.",
+    "entry": "This ESP-IDF entry shim provides the boot hook and calls app_start. The compiled source list includes main/entry.c, whose app_main makes that call."
+  },
+  "authored_by_model": true
+}

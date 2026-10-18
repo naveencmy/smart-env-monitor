@@ -1,0 +1,10 @@
+{
+  "schema_version": "3.0.0",
+  "view": "sequence",
+  "revision": "cd0fd4c0ee16de05c8b4b0b7b02c154f",
+  "graph_version": 3,
+  "generated_at_ms": 1792326548313,
+  "mermaid": "sequenceDiagram\n  participant Boot as ESP-IDF entry\n  participant App as Application\n  participant Logger as ESP-IDF logger\n  Boot->>App: calls app_start\n  App->>Logger: ESP_LOGI startup message",
+  "title": "Sequence Diagram",
+  "authored_by_model": true
+}
