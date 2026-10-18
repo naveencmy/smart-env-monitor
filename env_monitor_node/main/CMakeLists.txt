@@ -11,4 +11,4 @@ include("${CMAKE_CURRENT_LIST_DIR}/firmgen_sources.cmake")
 idf_component_register(
     SRCS "entry.c" ${APP_SOURCES}
     INCLUDE_DIRS "." ${FW_INCLUDE_DIRS}
-    REQUIRES esp_driver_gpio esp_timer esp_wifi esp_event nvs_flash freertos log)
+    REQUIRES esp_driver_gpio esp_timer esp_wifi esp_event nvs_flash freertos log firmgen_telemetry)

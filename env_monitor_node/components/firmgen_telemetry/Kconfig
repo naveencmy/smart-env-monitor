@@ -1,0 +1,80 @@
+menu "Firmgen Telemetry"
+
+    choice FG_TELEMETRY_PROFILE
+        prompt "Telemetry profile"
+        default FG_TELEMETRY_PROFILE_DEBUG
+        help
+            Telemetry is a development aid, so it is compiled in for debug
+            builds and compiled out completely for production builds. This is
+            a hard on/off, not a reduced rate: a shipping device must not put
+            diagnostic traffic on its serial line at all. Switching this
+            choice is all it takes to go from a dev board to a shipping
+            build — no source changes.
+
+        config FG_TELEMETRY_PROFILE_DEBUG
+            bool "Debug (telemetry ON - 500 ms interval, full detail)"
+            help
+                Streams a JSON line every 500 ms: CPU, task count, heap,
+                stack, uptime, plus PSRAM/temperature where available, and a
+                one-time boot/reset-reason event at startup. Includes the
+                top-tasks breakdown (per-task CPU% and stack high-water-mark)
+                when CONFIG_FREERTOS_GENERATE_RUN_TIME_STATS is enabled.
+
+        config FG_TELEMETRY_PROFILE_PRODUCTION
+            bool "Production (telemetry OFF - emits nothing)"
+            help
+                Emits NOTHING. The sampling task, the JSON emitters and the
+                boot/reset event are all compiled out, so there is no serial
+                traffic, no extra task or stack, and no sampling cost.
+
+                This also overrides FG_PROTO_MONITOR below, which writes
+                protocol events to the same serial stream.
+
+                The Live Intelligence RTOS and Protocol panels cannot
+                populate in this profile - that is expected, not a fault.
+                Switch back to Debug and reflash to stream again.
+    endchoice
+
+    config FG_TELEMETRY_LOG_LEVEL
+        int "Runtime log verbosity (esp_log_level_set, 0-5)"
+        range 0 5
+        default 3
+        help
+            Applied once at firmgen_telemetry_start() via
+            esp_log_level_set("*", ...) — lets debug and production builds
+            ship with different log verbosity from the same Kconfig switch
+            that picks the telemetry profile above, without touching
+            CONFIG_LOG_DEFAULT_LEVEL (which requires a full rebuild of every
+            translation unit). 0=None 1=Error 2=Warn 3=Info 4=Debug 5=Verbose.
+
+    config FG_TELEMETRY_TEMP_SENSOR
+        bool "Sample on-chip temperature sensor"
+        default n
+        depends on SOC_TEMP_SENSOR_SUPPORTED
+        help
+            Reads the internal temperature sensor each interval and includes
+            a "health":{"temp_c":...} field in the JSON output (shown as
+            "CPU Temp" in the RTOS panel).
+
+            OFF by default: enabling it makes the component require the
+            esp_driver_tsens driver, which would otherwise be pulled into
+            projects that don't use it. Turn this on only when you want the
+            CPU temperature reading. Also disable it if your application
+            already installs the temperature sensor driver — ESP-IDF allows
+            only one owner of that driver at a time.
+
+    config FG_PROTO_MONITOR
+        bool "Enable protocol bus monitor"
+        default y
+        help
+            Ignored when the Production telemetry profile is selected above:
+            production emits nothing, and this monitor writes to the same
+            serial stream.
+
+            Enables the firmgen_proto_monitor component. Call
+            firmgen_proto_monitor_start() from app_main and use
+            fg_proto_i2c() / fg_proto_spi() / fg_proto_uart() /
+            fg_proto_wifi_rssi() / fg_proto_mqtt_pub() from your driver
+            callbacks to log protocol activity to the Live Intelligence Panel.
+
+endmenu
