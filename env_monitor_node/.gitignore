@@ -1,5 +1,6 @@
-# ESP-IDF build artifacts (never ship these in a source package)
-build/
+# ESP-IDF build artifacts
+build/*
+!build/compile_commands.json
 managed_components/
 sdkconfig.old
 *.bin

@@ -1,0 +1,57 @@
+[
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\main\\entry.c -o entry.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\main\\entry.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\main\\main.c -o main.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\main\\main.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\app\\app.c -o app.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\app\\app.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\bsp\\board.c -o board.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\bsp\\board.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\modules\\env_state.c -o env_state.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\modules\\env_state.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\platforms\\esp32\\env_monitor_platform.c -o env_monitor_platform.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\platforms\\esp32\\env_monitor_platform.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\platforms\\esp32\\esp_nimble.c -o esp_nimble.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\platforms\\esp32\\esp_nimble.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\platforms\\esp32\\osal_freertos.c -o osal_freertos.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\platforms\\esp32\\osal_freertos.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\services\\env_monitor_service.c -o env_monitor_service.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\services\\env_monitor_service.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\utils\\helpers\\helpers.c -o helpers.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\utils\\helpers\\helpers.c"
+    },
+    {
+        "directory": "E:\\test_rat\\my_firmware\\env_monitor_node\\build",
+        "command": "xtensa-esp32-elf-gcc -I../main -I../firmware/configs -I../firmware/interfaces -I../firmware/modules -I../firmware/osal -I../firmware/services -I../firmware/utils/helpers -I../firmware/utils/logger -DESP_PLATFORM -std=gnu17 -c E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\utils\\logger\\logger.c -o logger.o",
+        "file": "E:\\test_rat\\my_firmware\\env_monitor_node\\firmware\\utils\\logger\\logger.c"
+    }
+]

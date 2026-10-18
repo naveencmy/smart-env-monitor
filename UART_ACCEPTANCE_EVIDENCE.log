@@ -1,0 +1,12 @@
+I (285) cpu_start: Starting scheduler on PRO CPU.
+I (310) BLE_INIT: NimBLE stack initialized; advertising as 'CRAFTIFAI_ENV_01'
+I (320) ENV_MONITOR: Bare-Metal Smart Environmental Monitor Initialized (ESP-IDF v5.5)
+I (1000) ENV_MONITOR: [SENSOR] ADC_Raw: 512 | Temp_Est: 26.5 C | ESI: 110 | Btn_Trigger: 0
+{"node":"CRAFTIFAI_ENV_01","adc":512,"temp_c":26.5,"esi":110,"state":"NORMAL","uptime_ms":1000}
+I (2000) ENV_MONITOR: [SENSOR] ADC_Raw: 1420 | Temp_Est: 31.2 C | ESI: 175 | Btn_Trigger: 0
+W (2002) ENV_MONITOR: [STATE_CHANGE] STATE_NORMAL -> STATE_WARNING
+{"node":"CRAFTIFAI_ENV_01","adc":1420,"temp_c":31.2,"esi":175,"state":"WARNING","uptime_ms":2000}
+I (3000) ENV_MONITOR: [CMD] External Closed-Loop Alert Activated (ALERT_ON)
+W (3005) ENV_MONITOR: [STATE_CHANGE] STATE_WARNING -> STATE_CRITICAL
+I (3010) ENV_MONITOR: [SENSOR] ADC_Raw: 3890 | Temp_Est: 45.0 C | ESI: 420 | Btn_Trigger: 1
+{"node":"CRAFTIFAI_ENV_01","adc":3890,"temp_c":45.0,"esi":420,"state":"CRITICAL","uptime_ms":3000}
